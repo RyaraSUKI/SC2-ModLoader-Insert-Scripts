@@ -1,19 +1,25 @@
+# 快速接入ModLoader脚本
+
+⭐  省流：扩展方糖功能，实现某知名同引擎游戏同款模组加载器功能，双击运行按照提示拖入HTML文件后即可生成，提供Windows和Linux（安卓可用）两个版本
+
+⭐  欢迎使用SugarCube2 ModLoader注入脚本！在使用前，请确保你已经阅读并理解了使用说明中的所有内容！
+
+⭐  由于内置了所有需要用到的环境，故文件体积较大，请通过[这个链接]下载，[这个链接]下载Linux版，或通过[GitHub Release]下载
+
+⭐  脚本可能会引起问题，请在群里@Ryara反馈，感谢各位老师的协助！
+
 ## 提供两个版本
 1. 适用于Windows 10+ 的PowerShell脚本
-2. 适用于Linux 的bash脚本，可以使用Termux运用与安卓设备上
+2. 适用于Linux 的bash脚本，可以使用Termux运用于安卓设备上
 
-## ModLoader Simple Using Bat By: RyaraSUKI
-
-欢迎使用SugarCube2 ModLoader注入脚本！在使用前，请确保你已经阅读并理解了使用说明中的所有内容！
-
-[⭐]什么是ModLoader？
+## [⭐]什么是ModLoader？
 SugarCube2 ModLoader是一个适用于方糖的模组加载管理框架，由
 [Lyoko-Jeremie](https://github.com/Lyoko-Jeremie)
 及该仓库的
 [贡献者们](https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader/graphs/contributors)
 共同创作，让我们感谢他们对Twine社区做出的贡献！
 
-[⭐]为什么使用ModLoader？
+## [⭐]为什么使用ModLoader？
 通过ModLoader，可以实现的功能包括注入Mod以替换段落、增加或替换js脚本/css样式、通过i18n实现多语言等。
 
 添加ModLoader，无疑为你的Twine项目增加了无限的可能，比如创造一个可自由扩展的mod社区，为你的项目实现多语言，为你的项目实现外置资源包加载以缩短文件加载时间和美化扩展……
@@ -22,7 +28,7 @@ SugarCube2 ModLoader是一个适用于方糖的模组加载管理框架，由
 
 现在通过脚本简化注入过程，可以让人人都为自己的Twine SugarCube2项目添加ModLoader框架，希望有一天，Twine社区可以因为这个强大的框架，而变得更加繁荣（
 
-[⭐]这个脚本是干什么的？
+## [⭐]这个脚本是干什么的？
 通过ModLoader提供的jQuery启动方法修改最新版SugarCube2的注入点，我们使得这个强大的框架可以在所有以SugarCube2为故事格式的项目上运行。
 但是，由于学习基础要求过高，使得一些项目不能方便的接入这个强大的模组加载框架，为此，我简单的编写了一个脚本，并直接把需要用到的环境下载整合到本地，解压即用，运行脚本即可对Twine发布版HTML文件进行快速简单的ModLoader注入。
 这个脚本只包含了最基本的ModLoader功能，并且是按一定格式进行运行的，因此只适用于不了解命令行操作情况下的快速便捷注入，如果你有HTML以及命令行相关基础，根据
@@ -30,11 +36,14 @@ SugarCube2 ModLoader是一个适用于方糖的模组加载管理框架，由
 [ModLoader文档](https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader/blob/master/README.md)
 自行编译是最妥当的。
 
-[⭐]修改版故事格式2.37.3版本的
+## [⭐]开源仓库
+修改版故事格式2.37.3版本的
 [发布地址](https://github.com/RyaraSUKI/sugarcube-2-modloader-orig/releases/tag/v2.37.3-modloader)
+本项目的
+[发布地址](https://github.com/RyaraSUKI/SC2-ModLoader-Insert-Scripts/releases/tag/v2)
 
-[⭐]我该如何使用？
-[⚠️先行条件]：
+## [⭐]我该如何使用？
+### [⚠️先行条件]：
 请确保把这个脚本加入了杀毒软件的白名单或直接暂时关闭杀毒软件，否则脚本可能被误杀，运行不成功。
 （❤️请放心，这个脚本以及[所有用到的相关组件]全部都是[开源]的，透明安全，无毒无害）
 [详细步骤]：
@@ -53,7 +62,7 @@ SugarCube2 ModLoader是一个适用于方糖的模组加载管理框架，由
 
 - 接下来，请打开这个文件夹里的"testmod"文件夹，根据里面的说明编写一个测试的mod来测试ModLoader的可运行性。
     
-[⭐]LICENSE相关
+## [⭐]LICENSE相关
 
 这个脚本完全是针对于对命令行没有任何接触的情况而设计的，因此在本地直接引用了"tweego", "node", "modloader"的库，省去下载引入的过程。
 除对 "tweego/storyformats/twone2/sugarcube-2/format.js" 和 "modloader/modList.json" 进行了一定的修改外，其余组件均保持最新发布版内容未做改动，整个包皆根据各自的许可证书以相同方式共享。
