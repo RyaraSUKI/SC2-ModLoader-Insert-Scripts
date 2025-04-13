@@ -1,0 +1,20 @@
+//testmod. By:RyaraSUKI
+{
+    "name": "TestMod",
+    "version": "1.0.0",
+    "styleFileList": [],
+    "scriptFileList": [],
+    "tweeFileList": [
+        "test.twee"
+    ],
+    "imgFileList": [],
+    "additionFile": [
+        "readme.txt"
+    ],
+    "dependenceInfo": [
+        {
+            "modName": "TweeReplacer",
+            "version": ">=1.0.0"
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+@echo off
+setlocal enabledelayedexpansion
+
+echo 欢迎使用SugarCube2 ModLoader注入脚本！在使用前，请确保你已经阅读并理解了使用说明中的所有内容！By: RyaraSUKI
+REM 开始
+:ASK
+echo 是否开始运行？(y/n)
+set /p userInput=
+if /i "%userInput%"=="n" (
+    echo 已取消操作，关闭窗口……
+    timeout /t 2 >nul
+    exit
+)
+if /i not "%userInput%"=="y" (
+    echo 请输入 y 或 n ！[y为确认，n为取消并退出]
+    goto ASK
+)
+
+REM 上传文件
+:UPLOAD
+echo 请将 .twee 或 .html 文件拖到此窗口后按回车：
+set /p filePath=
+if not exist "%filePath%" (
+    echo 文件不存在，请重新上传！
+    goto UPLOAD
+)
+
+set "ext=%~x1"
+set "ext=%filePath:~-5%"
+if /i not "%ext%"==".twee" if /i not "%ext%"==".html" (
+    echo 请选择正确的格式！[.twee 或 .html]
+    goto UPLOAD
+)
+
+REM 获取文件名
+for %%f in ("%filePath%") do (
+    set "sourceName=%%~nxf"
+    set "sourceBase=%%~nf"
+    set "sourceExt=%%~xf"
+)
+
+REM 复制文件到当前目录
+copy "%filePath%" . >nul
+if /i "%sourceExt%"==".twee" (
+    ren "%sourceName%" index.twee
+) else (
+    ren "%sourceName%" index.html
+)
+echo 载入文件成功
+
+REM 进入tweego文件夹
+cd /d "%~dp0tweego"
+
+REM 用修改版sugarcube2格式编译新index.html
+if exist "..\index.twee" (
+    echo 检测到载入了.twee文件，直接编译中……
+    tweego.exe -o index.html ..\index.twee
+    if errorlevel 1 (
+        echo 编译失败！
+        pause
+        exit /b
+    )
+    echo 编译完成！
+) else (
+    echo 检测到载入了.html文件，执行反编译中……
+    tweego.exe -d -o index.twee ..\index.html
+    if errorlevel 1 (
+        echo 反编译失败！
+        pause
+        exit /b
+    )
+    del ..\index.html
+    echo 反编译完成，执行重编译中……
+    tweego.exe -o index.html index.twee
+    echo 重编译完成！
+    del index.twee
+)
+
+REM 将新的index.html移动到modloader文件夹
+move index.html ..\modloader\index.html >nul
+
+REM 运行node注入命令
+echo 注入ModLoader中……
+cd /d "%~dp0"
+.\node\node.exe modloader\dist-insertTools\insert2html.js modloader\index.html modloader\modList.json modloader\dist-BeforeSC2\BeforeSC2.js
+
+REM 检查是否成功注入
+if exist modloader\index.html.mod.html (
+    del modloader\index.html
+    move modloader\index.html.mod.html index.html >nul
+    echo 注入成功！
+) else (
+    echo 注入失败！
+    pause
+    exit /b
+)
+
+REM 重命名为源文件名.mod.html
+set "finalName=%sourceBase%.mod.html"
+ren index.html "%finalName%"
+echo 恭喜你，全部步骤都已完成，请根据使用说明进行mod加载测试
+
+pause

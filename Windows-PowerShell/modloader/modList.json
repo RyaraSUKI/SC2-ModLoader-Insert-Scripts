@@ -1,0 +1,14 @@
+[
+  "modloader/mod/ModLoaderGui/ModLoaderGui.mod.zip",
+  "modloader/mod/ConflictChecker/ConflictChecker.mod.zip",
+  "modloader/mod/ModSubUiAngularJs/ModSubUiAngularJs.mod.zip",
+  "modloader/mod/TweeReplacerLinker/TweeReplacerLinker.mod.zip",
+  "modloader/mod/TweeReplacer/TweeReplacer.mod.zip",
+  "modloader/mod/I18nTweeReplacer/I18nTweeReplacer.mod.zip",
+  "modloader/mod/I18nTweeList/I18nTweeList.mod.zip",
+  "modloader/mod/I18nScriptList/I18nScriptList.mod.zip",
+  "modloader/mod/ReplacePatch/ReplacePatcher.mod.zip",
+  "modloader/mod/TweePrefixPostfixAddon/TweePrefixPostfixAddon.mod.zip",
+  "modloader/mod/Diff3WayMerge/Diff3WayMerge.mod.zip",
+  "modloader/mod/SweetAlert2Mod/SweetAlert2Mod.mod.zip",
+]
