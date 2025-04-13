@@ -4,7 +4,7 @@
 
 ⭐  欢迎使用SugarCube2 ModLoader注入脚本！在使用前，请确保你已经阅读并理解了使用说明中的所有内容！
 
-⭐  由于内置了所有需要用到的环境，故文件体积较大，请通过[这个链接]下载，[这个链接]下载Linux版，或通过[GitHub Release]下载
+⭐  由于内置了所有需要用到的环境，故文件体积较大，请通过[这个链接](https://lsjcaizhi.lanzouw.com/i8bkw2tjbbpi)下载，[这个链接](https://lsjcaizhi.lanzouw.com/iDnJc2tjbcji)下载Linux版，或通过[GitHub Release](https://github.com/RyaraSUKI/SC2-ModLoader-Insert-Scripts/releases/tag/v2)下载
 
 ⭐  脚本可能会引起问题，请在群里@Ryara反馈，感谢各位老师的协助！
 
